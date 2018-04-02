@@ -2,8 +2,8 @@
 A simple TCP "echo" server written in Python.
 
 author:  Amy Csizmar Dalal and [YOUR NAMES HERE]
-CS 331, Fall 2015
-date:  21 September 2015
+CS 331, Spring 2018
+date:  2 April 2018
 '''
 import sys, socket
 
@@ -37,8 +37,8 @@ def main():
     if len(sys.argv) > 1:
         try:
             server = TCPServer(int(sys.argv[1]))
-        except ValueError:
-            print ("Please specify port as an integer.  Creating server on default port.")
+        except ValueError as e:
+            print ("Error in specifying port. Creating server on default port.")
             server = TCPServer()
     else:
         server = TCPServer()
